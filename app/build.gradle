@@ -27,7 +27,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'angelo.App'
+    mainClass = 'fish.glassyeyed.angelo.App'
 }
 
 tasks.named('test') {
@@ -35,10 +35,8 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-
-
 generateGrammarSource {
 //    maxHeapSize = "64m"
-    outputDirectory = "${project.rootDir}/app/src/main/java/angelo/antlr" as File
+    outputDirectory = "${project.rootDir}/app/src/main/java/fish/glassyeyed/angelo/antlr" as File
     arguments += ["-visitor", "-long-messages"]
 }

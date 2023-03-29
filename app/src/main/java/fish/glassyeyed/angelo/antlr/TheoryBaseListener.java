@@ -1,6 +1,6 @@
-// Generated from Expr.g4 by ANTLR 4.5
+// Generated from Theory.g4 by ANTLR 4.5
 
-package angelo.antlr;
+package fish.glassyeyed.angelo.antlr;
 
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -9,35 +9,23 @@ import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 /**
- * This class provides an empty implementation of {@link ExprListener},
+ * This class provides an empty implementation of {@link TheoryListener},
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
-public class ExprBaseListener implements ExprListener {
+public class TheoryBaseListener implements TheoryListener {
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProg(ExprParser.ProgContext ctx) { }
+	@Override public void enterTheory(TheoryParser.TheoryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProg(ExprParser.ProgContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExpr(ExprParser.ExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExpr(ExprParser.ExprContext ctx) { }
+	@Override public void exitTheory(TheoryParser.TheoryContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
