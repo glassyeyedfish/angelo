@@ -22,12 +22,16 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
 
     // This dependency is used by the application.
-    antlr "org.antlr:antlr4:4.5"
+    antlr "org.antlr:antlr4:4.10"
 }
 
 application {
     // Define the main class for the application.
     mainClass = 'fish.glassyeyed.angelo.App'
+}
+
+run {
+    standardInput = System.in
 }
 
 tasks.named('test') {
