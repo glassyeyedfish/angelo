@@ -36,4 +36,8 @@ public class ErrorListener extends BaseErrorListener {
         System.err.println("Stack Trace:\n" + stack);
     }
 
+    public static void reset() {
+        hasError = false;
+    }
+
 }

@@ -22,6 +22,7 @@ public class App {
             CommonTokenStream tokens = new CommonTokenStream(lexer);
             AngeloParser parser = new AngeloParser(tokens);
 
+            ErrorListener.reset();
             parser.removeErrorListeners();
             parser.addErrorListener(new ErrorListener());
 
@@ -51,6 +52,7 @@ public class App {
 
             // PRINT
             System.out.println("You entered: " + wff.prettyPrint());
+            System.out.println("Atoms: " + wff.getAtoms().toString());
 
             // LOOP
         }
