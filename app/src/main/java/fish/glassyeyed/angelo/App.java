@@ -7,7 +7,6 @@ import fish.glassyeyed.angelo.model.AtomicWff;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.util.Scanner;
@@ -43,18 +42,18 @@ public class App {
 
         // REPL
         while (true) {
-            // READ
-            System.out.print("> ");
-            String input = scanner.nextLine();
-
-            // EVALUATE
-            AbstractWff wff = parse(input);
-
-            // PRINT
-            System.out.println("You entered: " + wff.prettyPrint());
-            System.out.println("Atoms: " + wff.getAtoms().toString());
-
-            // LOOP
+//            // READ
+//            System.out.print("> ");
+//            String input = scanner.nextLine();
+//
+//            // EVALUATE
+//            AbstractWff wff = parse(input);
+//
+//            // PRINT
+//            System.out.println("You entered: " + wff.prettyPrint());
+//            System.out.println("Atoms: " + wff.getAtoms().toString());
+//
+//            // LOOP
         }
     }
 }

@@ -1,6 +1,6 @@
 package fish.glassyeyed.angelo.model;
 
-import java.util.List;
+import java.util.Set;
 
 public class ImpWff extends AbstractWff {
     private final AbstractWff leftChild;
@@ -12,8 +12,8 @@ public class ImpWff extends AbstractWff {
     }
 
     @Override
-    public List<String> getAtoms() {
-        List<String> atoms = leftChild.getAtoms();
+    public Set<String> getAtoms() {
+        Set<String> atoms = leftChild.getAtoms();
         atoms.addAll(rightChild.getAtoms());
         return atoms;
     }

@@ -1,7 +1,8 @@
 package fish.glassyeyed.angelo.model;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class AtomicWff extends AbstractWff {
     private final String identifier;
@@ -11,8 +12,8 @@ public class AtomicWff extends AbstractWff {
     }
 
     @Override
-    public List<String> getAtoms() {
-        List<String> atoms = new ArrayList<>();
+    public Set<String> getAtoms() {
+        Set<String> atoms = new HashSet<>();
         atoms.add(this.identifier);
         return atoms;
     }

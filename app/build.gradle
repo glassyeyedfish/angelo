@@ -23,6 +23,7 @@ dependencies {
 
     // This dependency is used by the application.
     antlr "org.antlr:antlr4:4.10"
+
 }
 
 application {
