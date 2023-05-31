@@ -3,9 +3,9 @@ package fish.glassyeyed.angelo.model;
 import java.util.Set;
 
 public class NegWff extends AbstractWff {
-    private final AbstractWff child;
+    private final AbstractStatement child;
 
-    public NegWff(AbstractWff child) {
+    public NegWff(AbstractStatement child) {
         this.child = child;
     }
 
@@ -15,7 +15,7 @@ public class NegWff extends AbstractWff {
     }
 
     @Override
-    public String prettyPrint() {
-        return "~" + child.prettyPrint();
+    public String toPrettyString() {
+        return "~" + child.toPrettyString();
     }
 }

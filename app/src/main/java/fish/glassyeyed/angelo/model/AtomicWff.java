@@ -19,7 +19,7 @@ public class AtomicWff extends AbstractWff {
     }
 
     @Override
-    public String prettyPrint() {
+    public String toPrettyString() {
         return this.identifier;
     }
 }

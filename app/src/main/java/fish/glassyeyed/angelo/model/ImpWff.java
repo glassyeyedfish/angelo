@@ -3,10 +3,10 @@ package fish.glassyeyed.angelo.model;
 import java.util.Set;
 
 public class ImpWff extends AbstractWff {
-    private final AbstractWff leftChild;
-    private final AbstractWff rightChild;
+    private final AbstractStatement leftChild;
+    private final AbstractStatement rightChild;
 
-    public ImpWff(AbstractWff leftChild, AbstractWff rightChild) {
+    public ImpWff(AbstractStatement leftChild, AbstractStatement rightChild) {
         this.leftChild = leftChild;
         this.rightChild = rightChild;
     }
@@ -19,7 +19,7 @@ public class ImpWff extends AbstractWff {
     }
 
     @Override
-    public String prettyPrint() {
-        return "(" + leftChild.prettyPrint() + " -> " + rightChild.prettyPrint() + ")";
+    public String toPrettyString() {
+        return "(" + leftChild.toPrettyString() + " -> " + rightChild.toPrettyString() + ")";
     }
 }

@@ -4,7 +4,10 @@ grammar Angelo;
 package fish.glassyeyed.angelo.antlr;
 }
 
-prog_r: '"' wff_r '"' EOF               # Program
+prog_r: stmt_r+ EOF               # Program
+    ;
+
+stmt_r: wff_r ':'                       # Statement
     ;
 
 wff_r: ID                               # AtomicWff

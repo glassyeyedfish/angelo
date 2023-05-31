@@ -22,6 +22,18 @@ public interface AngeloListener extends ParseTreeListener {
 	 */
 	void exitProgram(AngeloParser.ProgramContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code Statement}
+	 * labeled alternative in {@link AngeloParser#stmt_r}.
+	 * @param ctx the parse tree
+	 */
+	void enterStatement(AngeloParser.StatementContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Statement}
+	 * labeled alternative in {@link AngeloParser#stmt_r}.
+	 * @param ctx the parse tree
+	 */
+	void exitStatement(AngeloParser.StatementContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code AtomicWff}
 	 * labeled alternative in {@link AngeloParser#wff_r}.
 	 * @param ctx the parse tree

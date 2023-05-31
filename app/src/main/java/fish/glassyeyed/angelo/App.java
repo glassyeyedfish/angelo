@@ -2,21 +2,19 @@ package fish.glassyeyed.angelo;
 
 import fish.glassyeyed.angelo.antlr.AngeloLexer;
 import fish.glassyeyed.angelo.antlr.AngeloParser;
-import fish.glassyeyed.angelo.model.AbstractWff;
+import fish.glassyeyed.angelo.model.AbstractStatement;
 import fish.glassyeyed.angelo.model.AtomicWff;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import java.util.Scanner;
-
 public class App {
 
-    public static AbstractWff parse(String input) {
+    public static AbstractStatement parse(String sourceFileName) {
         ParseTree ast = null;
         try {
-            CharStream chars = CharStreams.fromString(input);
+            CharStream chars = CharStreams.fromFileName(sourceFileName);
             AngeloLexer lexer = new AngeloLexer(chars);
             CommonTokenStream tokens = new CommonTokenStream(lexer);
             AngeloParser parser = new AngeloParser(tokens);
@@ -33,27 +31,16 @@ public class App {
             return new AtomicWff("error");
         }
 
-        WffGenerator generator = new WffGenerator();
+        ModelGenerator generator = new ModelGenerator();
         return generator.visit(ast);
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // REPL
-        while (true) {
-//            // READ
-//            System.out.print("> ");
-//            String input = scanner.nextLine();
-//
-//            // EVALUATE
-//            AbstractWff wff = parse(input);
-//
-//            // PRINT
-//            System.out.println("You entered: " + wff.prettyPrint());
-//            System.out.println("Atoms: " + wff.getAtoms().toString());
-//
-//            // LOOP
+        if (args.length != 1) {
+            System.out.println("USAGE: angelo [FILE]");
+            System.exit(0);
         }
+
+        String sourceFileName = args[0];
     }
 }

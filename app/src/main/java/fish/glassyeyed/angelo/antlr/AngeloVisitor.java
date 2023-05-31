@@ -20,6 +20,13 @@ public interface AngeloVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProgram(AngeloParser.ProgramContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code Statement}
+	 * labeled alternative in {@link AngeloParser#stmt_r}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStatement(AngeloParser.StatementContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code AtomicWff}
 	 * labeled alternative in {@link AngeloParser#wff_r}.
 	 * @param ctx the parse tree
