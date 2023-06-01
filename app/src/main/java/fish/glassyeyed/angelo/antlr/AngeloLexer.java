@@ -37,7 +37,7 @@ public class AngeloLexer extends Lexer {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "':'", "'('", "')'", "'~'", "'->'"
+			null, "';'", "'('", "')'", "'~'", "'->'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -124,7 +124,7 @@ public class AngeloLexer extends Lexer {
 		"\u0005\u0015\u0001\u0000\u0000\u0000\u0007\u0017\u0001\u0000\u0000\u0000"+
 		"\t\u0019\u0001\u0000\u0000\u0000\u000b\u001c\u0001\u0000\u0000\u0000\r"+
 		"#\u0001\u0000\u0000\u0000\u000f-\u0001\u0000\u0000\u0000\u0011\u0012\u0005"+
-		":\u0000\u0000\u0012\u0002\u0001\u0000\u0000\u0000\u0013\u0014\u0005(\u0000"+
+		";\u0000\u0000\u0012\u0002\u0001\u0000\u0000\u0000\u0013\u0014\u0005(\u0000"+
 		"\u0000\u0014\u0004\u0001\u0000\u0000\u0000\u0015\u0016\u0005)\u0000\u0000"+
 		"\u0016\u0006\u0001\u0000\u0000\u0000\u0017\u0018\u0005~\u0000\u0000\u0018"+
 		"\b\u0001\u0000\u0000\u0000\u0019\u001a\u0005-\u0000\u0000\u001a\u001b"+

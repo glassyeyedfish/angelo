@@ -19,6 +19,12 @@ public class Program extends AbstractStatement {
 
     @Override
     public String toPrettyString() {
-        return null;
+        StringBuilder sb = new StringBuilder();
+
+        for (Statement s: statements) {
+            sb.append(s.toPrettyString());
+        }
+
+        return sb.toString();
     }
 }

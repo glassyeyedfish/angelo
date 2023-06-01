@@ -17,6 +17,6 @@ public class Statement extends AbstractStatement {
 
     @Override
     public String toPrettyString() {
-        return "";
+        return wff.toPrettyString() + ";\n";
     }
 }

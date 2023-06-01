@@ -7,7 +7,7 @@ package fish.glassyeyed.angelo.antlr;
 prog_r: stmt_r+ EOF               # Program
     ;
 
-stmt_r: wff_r ':'                       # Statement
+stmt_r: wff_r ';'                       # Statement
     ;
 
 wff_r: ID                               # AtomicWff

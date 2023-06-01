@@ -3,10 +3,10 @@ package fish.glassyeyed.angelo.model;
 import java.util.Set;
 
 public class ImpWff extends AbstractWff {
-    private final AbstractStatement leftChild;
-    private final AbstractStatement rightChild;
+    private final AbstractWff leftChild;
+    private final AbstractWff rightChild;
 
-    public ImpWff(AbstractStatement leftChild, AbstractStatement rightChild) {
+    public ImpWff(AbstractWff leftChild, AbstractWff rightChild) {
         this.leftChild = leftChild;
         this.rightChild = rightChild;
     }

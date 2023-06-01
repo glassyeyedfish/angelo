@@ -4,6 +4,7 @@ import fish.glassyeyed.angelo.antlr.AngeloLexer;
 import fish.glassyeyed.angelo.antlr.AngeloParser;
 import fish.glassyeyed.angelo.model.AbstractStatement;
 import fish.glassyeyed.angelo.model.AtomicWff;
+import fish.glassyeyed.angelo.model.Program;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -11,7 +12,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 
 public class App {
 
-    public static AbstractStatement parse(String sourceFileName) {
+    public static Program parse(String sourceFileName) {
         ParseTree ast = null;
         try {
             CharStream chars = CharStreams.fromFileName(sourceFileName);
@@ -28,11 +29,12 @@ public class App {
         }
 
         if (ErrorListener.hasError) {
-            return new AtomicWff("error");
+            return null;
         }
 
         ModelGenerator generator = new ModelGenerator();
-        return generator.visit(ast);
+        // TODO fix null pointer bug
+        return (Program) generator.visit(ast);
     }
 
     public static void main(String[] args) {
@@ -42,5 +44,11 @@ public class App {
         }
 
         String sourceFileName = args[0];
+
+        Program program = App.parse(sourceFileName);
+
+        if (program != null) {
+            System.out.println(program.toPrettyString());
+        }
     }
 }
